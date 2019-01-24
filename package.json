@@ -1,0 +1,23 @@
+{
+  "name": "ie9-uploader-vue",
+  "version": "1.0.0",
+  "description": "基于vue的兼容ie9的上传组件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yakii9/ie9-uploader-vue.git"
+  },
+  "keywords": [
+    "vue",
+    "ie9"
+  ],
+  "author": "duan shiwen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yakii9/ie9-uploader-vue/issues"
+  },
+  "homepage": "https://github.com/yakii9/ie9-uploader-vue#readme"
+}
