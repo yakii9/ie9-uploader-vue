@@ -8,16 +8,6 @@
       </form>
       <iframe id="upload" name="upload" width="1px" height="1px"></iframe>
     </div>
-    <div v-if="displayUploaded">
-      <h3 class="list-name">已上传列表：</h3>
-      <p v-if="!uploadList || uploadList.length <= 0" class="empty">暂无文件</p>
-      <div v-if="uploadList && uploadList.length > 0" v-for="(link, index) in originList" :key="index">
-        <i class="el-icon-delete delete-file" @click="handleDeleteFile(index)"/>
-        <a class="link" :href="`${link}`">
-          {{ link }}
-        </a>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -43,10 +33,6 @@ export default {
       type: String,
       default: ''
     },
-    displayUploaded: {
-      type: Boolean,
-      default: true
-    },
     btnText: {
       type: String,
       default: '上传文件'
@@ -68,14 +54,6 @@ export default {
     }
   },
   methods: {
-    handleDeleteFile (idx) {
-      if (idx > -1) {
-        const uploadList = [ ...this.uploadList ]
-        uploadList.splice(idx, 1)
-        this.uploadList = uploadList
-        this.$emit('change', uploadList, this.valueKey)
-      }
-    },
     parseIframeResponse () {
       const elm = document.getElementById('upload').contentWindow.document.getElementsByTagName('pre')[0]
       const response = elm ? elm.innerHTML : null
